@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The goal of this repo was to create a feedback mechanism (+/-) using
+ActionCable as simply as possible, to aid in understanding the
+underlying tools:
 
-Things you may want to cover:
+* No Stimulus, StimulusReflex, Turbo
+* Just JavaScript, no help apart from what is provided by ActionCable
 
-* Ruby version
+## Versions
 
-* System dependencies
+This repo was made with Ruby 3.0.0 and Rails 6.1.2.1.
+## Getting Started
 
-* Configuration
+Clone this repo, then:
 
-* Database creation
+`bin/rails db:create db:migrate db:seed`
 
-* Database initialization
+You can then start the server:
 
-* How to run the test suite
+`bin/rails server`
 
-* Services (job queues, cache servers, search engines, etc.)
+The interesting files are:
 
-* Deployment instructions
-
-* ...
+* `app/controllers/items_controller.rb`
+* `app/channels/rating_channel.rb`
+* `app/javascript/channels/rating_channel.js`
+* `app/views/items/*`
